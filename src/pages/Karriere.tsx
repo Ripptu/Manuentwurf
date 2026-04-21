@@ -1,4 +1,5 @@
 import { Star } from "lucide-react";
+import FadeIn from "../components/FadeIn";
 
 export default function Karriere() {
   return (
@@ -7,7 +8,7 @@ export default function Karriere() {
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           
-          <div className="z-10 bg-white/70 p-8 rounded-3xl backdrop-blur-sm border border-white/60 shadow-xl">
+          <FadeIn direction="right" className="z-10 bg-white/70 p-8 rounded-3xl backdrop-blur-sm border border-white/60 shadow-xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-[#0f172a] leading-tight mb-8 italic">
               Mitstreiter gesucht - <br/><span className="font-bold not-italic">dein neuer Job wartet</span>
             </h1>
@@ -19,17 +20,17 @@ export default function Karriere() {
             </p>
             
             <div className="flex gap-6 items-center">
-              <a href="#offene-stellen" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-md font-semibold transition-all shadow-lg shadow-primary-600/20 text-md">
+              <a href="#offene-stellen" className="bg-primary-600 hover:bg-primary-500 text-white px-8 py-3 rounded-md font-semibold transition-all shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 hover:-translate-y-1 text-md">
                 Offene Stellen ansehen
               </a>
-              <a href="#video" className="text-sm font-semibold hover:text-primary-600 transition-colors flex items-center uppercase tracking-wider">
-                Video ansehen &rarr;
+              <a href="#video" className="text-sm font-semibold hover:text-primary-600 transition-colors flex items-center uppercase tracking-wider group">
+                Video ansehen <span className="group-hover:translate-x-1 transition-transform ml-1">&rarr;</span>
               </a>
             </div>
-          </div>
+          </FadeIn>
           
           {/* Image Collage Placeholder */}
-          <div className="relative h-[500px] w-full z-0 hidden md:block">
+          <FadeIn direction="left" delay={0.2} className="relative h-[500px] w-full z-0 hidden md:block">
             {/* We'll make a simplified collage out of 4 images */}
             <div className="absolute top-10 right-0 w-48 h-64 rounded-2xl overflow-hidden shadow-lg transform rotate-3">
               <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400" className="w-full h-full object-cover" />
@@ -45,14 +46,15 @@ export default function Karriere() {
             </div>
             {/* Background blob to mimic the glow in the screenshot */}
             <div className="absolute top-1/2 right-20 w-96 h-96 bg-primary-100/50 rounded-full blur-3xl -translate-y-1/2 -z-10"></div>
-          </div>
+          </FadeIn>
 
         </div>
       </section>
 
       {/* Video Section Placeholder */}
       <section id="video" className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-slate-200 aspect-video relative flex items-center justify-center cursor-pointer group">
+        <FadeIn direction="up">
+        <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 bg-slate-200 aspect-video relative flex items-center justify-center cursor-pointer group">
           <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" />
           <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors"></div>
           
@@ -73,12 +75,13 @@ export default function Karriere() {
             </div>
           </div>
         </div>
+        </FadeIn>
       </section>
 
       {/* Mission Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <div>
+          <FadeIn direction="up">
             <h2 className="text-3xl font-light text-[#0f172a] mb-8 italic">Unsere <span className="font-bold not-italic">Mission</span></h2>
             <div className="space-y-6 text-slate-500 leading-relaxed text-[15px]">
               <p>
@@ -91,106 +94,110 @@ export default function Karriere() {
                 Du willst bessere Eindrücke aus erster Hand? Schau dir gerne in unsere Bewertungen bei Google, Provenexpert oder Kununu an.
               </p>
             </div>
-          </div>
+          </FadeIn>
           
-          <div className="flex flex-col justify-center gap-8 pl-0 md:pl-12 border-l-0 md:border-l border-slate-200">
+          <FadeIn direction="up" delay={0.2} className="flex flex-col justify-center gap-8 pl-0 md:pl-12 border-l-0 md:border-l border-slate-200">
             
-            <div className="relative">
-              <h3 className="font-bold text-[#1e293b] mb-2 flex items-center gap-2">
-                <span className="text-xl">📱</span> Digitale Praxis
+            <div className="relative group p-4 rounded-xl hover:bg-slate-50 transition-colors">
+              <h3 className="font-bold text-[#1e293b] mb-2 flex items-center gap-2 group-hover:text-primary-600 transition-colors">
+                <span className="text-xl group-hover:scale-110 transition-transform">📱</span> Digitale Praxis
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Digitale Aktenführung oder Online-Sprechstunde: Wir stellen Tablet, Laptop und sämtliche erforderliche Utensilien für effiziente papierlose Arbeit bereit.
               </p>
             </div>
 
-            <div className="relative">
-              <h3 className="font-bold text-[#1e293b] mb-2 flex items-center gap-2">
-                <span className="text-xl">🧘‍♀️</span> Flexible Arbeitsgestaltung
+            <div className="relative group p-4 rounded-xl hover:bg-slate-50 transition-colors">
+              <h3 className="font-bold text-[#1e293b] mb-2 flex items-center gap-2 group-hover:text-primary-600 transition-colors">
+                <span className="text-xl group-hover:scale-110 transition-transform">🧘‍♀️</span> Flexible Arbeitsgestaltung
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Bei uns besteht sowohl die Möglichkeit, hybrid zu arbeiten, als auch seine Arbeitszeiten frei zu gestalten.
               </p>
             </div>
 
-            <div className="relative">
-              <h3 className="font-bold text-[#1e293b] mb-2 flex items-center gap-2">
-                <span className="text-xl">👥</span> Positives Arbeitsklima
+            <div className="relative group p-4 rounded-xl hover:bg-slate-50 transition-colors">
+              <h3 className="font-bold text-[#1e293b] mb-2 flex items-center gap-2 group-hover:text-primary-600 transition-colors">
+                <span className="text-xl group-hover:scale-110 transition-transform">👥</span> Positives Arbeitsklima
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Wir sind einander wichtig - und das führt zu einem wertschätzenden, angenehmen Arbeitsklima. Wir freuen uns, wenn auch du ein Teil davon werden möchtest!
               </p>
             </div>
 
-          </div>
+          </FadeIn>
         </div>
 
         {/* Team Image full width rounded below mission */}
-        <div className="mt-24 rounded-3xl overflow-hidden h-[400px] shadow-lg">
-          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover" />
-        </div>
+        <FadeIn direction="up" delay={0.4}>
+          <div className="mt-24 rounded-3xl overflow-hidden h-[400px] shadow-lg group">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+        </FadeIn>
       </section>
 
-      {/* Corporate Values */}
+       {/* Corporate Values */}
       <section className="bg-slate-50 py-24 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-light text-[#0f172a] mb-12 italic">Unsere <span className="font-bold not-italic">Werte</span></h2>
+          <FadeIn direction="up">
+            <h2 className="text-3xl font-light text-[#0f172a] mb-12 italic">Unsere <span className="font-bold not-italic">Werte</span></h2>
+          </FadeIn>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             
-            <div>
+            <FadeIn direction="up" delay={0.1}>
                <h3 className="font-bold text-[#1e293b] mb-3 flex items-center gap-2">
                 <span className="text-lg">💡</span> Transparenz
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Offenheit und Ehrlichkeit sind uns sehr wichtig. Wir teilen Informationen und Einblicke offen, damit du die Zusammenhänge verstehst und zur Gestaltung unserer gemeinsamen Zukunft beitragen kannst.
               </p>
-            </div>
+            </FadeIn>
 
-            <div>
+            <FadeIn direction="up" delay={0.2}>
                <h3 className="font-bold text-[#1e293b] mb-3 flex items-center gap-2">
                 <span className="text-lg">💕</span> Du bist wichtig
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Deine Bedürfnisse liegen uns am Herzen. Wir sind dankbar für deine Anregungen und schätzen dein Feedback und deine Ideen. Diese Wertschätzung ist uns bei allen Menschen wichtig - wir alle wollen mit unseren Eigenheiten angenommen werden.
               </p>
-            </div>
+            </FadeIn>
 
-            <div>
+            <FadeIn direction="up" delay={0.3}>
                <h3 className="font-bold text-[#1e293b] mb-3 flex items-center gap-2">
                 <span className="text-lg">🛠️</span> Mach' dein Ding!
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Wir glauben, dass Menschen am besten arbeiten, wenn sie eigenverantwortlich handeln können. Bei uns hast du die Freiheit, deine Arbeit weitestgehend selbstbestimmt durchzuführen und zu gestalten.
               </p>
-            </div>
+            </FadeIn>
 
-            <div className="lg:col-start-1">
+            <FadeIn direction="up" delay={0.4} className="lg:col-start-1">
                <h3 className="font-bold text-[#1e293b] mb-3 flex items-center gap-2">
                 <span className="text-lg">🤝</span> Arbeiten auf Augenhöhe
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Hier geht es nicht um Hierarchien, sondern um Ideen und Zusammenarbeit. Bei uns herrscht eine Atmosphäre, in der sich alle wohl genug fühlen, um sich auszudrücken, Vorschläge zu machen und Verantwortung zu übernehmen.
               </p>
-            </div>
+            </FadeIn>
 
-            <div>
+            <FadeIn direction="up" delay={0.5}>
                <h3 className="font-bold text-[#1e293b] mb-3 flex items-center gap-2">
                 <span className="text-lg">🧑‍🤝‍🧑</span> Alle für alle
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Wir sind ein Team - uns ist es wichtig, dass wir uns alle als solches verstehen, voneinander lernen und gemeinsam unseren Arbeitsalltag gestalten.
               </p>
-            </div>
+            </FadeIn>
 
-            <div>
+            <FadeIn direction="up" delay={0.6}>
                <h3 className="font-bold text-[#1e293b] mb-3 flex items-center gap-2">
                 <span className="text-lg">🎯</span> Geht nicht, gibt's nicht
               </h3>
               <p className="text-sm text-slate-600 leading-relaxed">
                 Wir finden für alles eine Lösung - getreu dem Motto der Praxis.
               </p>
-            </div>
+            </FadeIn>
 
           </div>
         </div>
@@ -198,14 +205,16 @@ export default function Karriere() {
 
       {/* Open Positions */}
       <section id="offene-stellen" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <h2 className="text-3xl font-light text-[#0f172a] mb-6 italic">Offene <span className="font-bold not-italic">Positionen</span></h2>
-        <p className="text-slate-500 mb-12">Nachfolgend findest du unsere Stellenausschreibungen. Wir freuen uns auf deine Bewerbung!</p>
+        <FadeIn direction="up">
+          <h2 className="text-3xl font-light text-[#0f172a] mb-6 italic">Offene <span className="font-bold not-italic">Positionen</span></h2>
+          <p className="text-slate-500 mb-12">Nachfolgend findest du unsere Stellenausschreibungen. Wir freuen uns auf deine Bewerbung!</p>
+        </FadeIn>
         
         <div className="flex flex-col gap-0 border-t border-slate-200">
           
           {/* Job 1 */}
-          <div className="border-b border-slate-200 py-8">
-            <h3 className="text-lg font-bold text-[#1e293b] mb-4">
+          <FadeIn direction="up" delay={0.1} className="border-b border-slate-200 py-8 relative group">
+            <h3 className="text-lg font-bold text-[#1e293b] mb-4 group-hover:text-primary-600 transition-colors">
               Sachbearbeiter:in vorbereitende Buchhaltung &amp; Abrechnung psychotherapeutischer Leistungen
             </h3>
             <p className="text-sm text-slate-600 mb-6 max-w-3xl leading-relaxed">
@@ -215,28 +224,28 @@ export default function Karriere() {
               <span>Hamburg</span>
               <span>Veröffentlicht am 15. März 2026</span>
             </div>
-            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20">
+            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-500 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 hover:-translate-y-0.5">
               Job ansehen
             </a>
-          </div>
+          </FadeIn>
 
           {/* Job 2 */}
-          <div className="border-b border-slate-200 py-8">
-            <h3 className="text-lg font-bold text-[#1e293b] mb-4">
+          <FadeIn direction="up" delay={0.2} className="border-b border-slate-200 py-8 relative group">
+            <h3 className="text-lg font-bold text-[#1e293b] mb-4 group-hover:text-primary-600 transition-colors">
               Praxisleitung (m/w/d) für Psychotherapie | Standort Hamburg-Winterhude
             </h3>
             <div className="flex items-center gap-4 text-xs text-slate-500 mb-6">
               <span>Hamburg</span>
               <span>Veröffentlicht am 02. März 2026</span>
             </div>
-            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20">
+            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-500 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 hover:-translate-y-0.5">
               Job ansehen
             </a>
-          </div>
+          </FadeIn>
 
           {/* Job 3 */}
-          <div className="border-b border-slate-200 py-8">
-            <h3 className="text-lg font-bold text-[#1e293b] mb-4">
+          <FadeIn direction="up" delay={0.3} className="border-b border-slate-200 py-8 relative group">
+            <h3 className="text-lg font-bold text-[#1e293b] mb-4 group-hover:text-primary-600 transition-colors">
               Hochschul-Praktikum Psychologie: Studierende (B.Sc. oder M.Sc. Psychologie) m/w/d in Hamburg
             </h3>
             <p className="text-sm text-slate-600 mb-6 max-w-3xl leading-relaxed">
@@ -246,14 +255,14 @@ export default function Karriere() {
               <span>Hamburg</span>
               <span>Veröffentlicht am 02. März 2026</span>
             </div>
-            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20">
+            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-500 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 hover:-translate-y-0.5">
               Job ansehen
             </a>
-          </div>
+          </FadeIn>
 
           {/* Job 4 */}
-          <div className="border-b border-slate-200 py-8">
-            <h3 className="text-lg font-bold text-[#1e293b] mb-4">
+          <FadeIn direction="up" delay={0.4} className="border-b border-slate-200 py-8 relative group">
+            <h3 className="text-lg font-bold text-[#1e293b] mb-4 group-hover:text-primary-600 transition-colors">
               Hochschul-Praktikum: Studierende (B.Sc. oder M.Sc. Wirtschafts-/Psychologie) m/w/d in Hamburg
             </h3>
             <p className="text-sm text-slate-600 mb-6 max-w-3xl leading-relaxed">
@@ -263,14 +272,14 @@ export default function Karriere() {
               <span>Hamburg</span>
               <span>Veröffentlicht am 16. Februar 2026</span>
             </div>
-            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20">
+            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-500 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 hover:-translate-y-0.5">
               Job ansehen
             </a>
-          </div>
+          </FadeIn>
           
           {/* Job 5 */}
-          <div className="border-b border-slate-200 py-8">
-            <h3 className="text-lg font-bold text-[#1e293b] mb-4">
+          <FadeIn direction="up" delay={0.5} className="border-b border-slate-200 py-8 relative group">
+            <h3 className="text-lg font-bold text-[#1e293b] mb-4 group-hover:text-primary-600 transition-colors">
               Psychologische Psychotherapeut:innen (TP/VT/ST) - NEUE GEHALTSMODELLE - Hybrid möglich
             </h3>
              <p className="text-sm text-slate-600 mb-6 max-w-3xl leading-relaxed">
@@ -280,10 +289,10 @@ export default function Karriere() {
               <span>Remote</span>
               <span>Veröffentlicht am 19. Dezember 2025</span>
             </div>
-            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20">
+            <a href="#" className="inline-block bg-primary-600 hover:bg-primary-500 text-white px-6 py-2.5 rounded-md font-semibold text-sm transition-all shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40 hover:-translate-y-0.5">
               Job ansehen
             </a>
-          </div>
+          </FadeIn>
 
         </div>
       </section>
@@ -293,36 +302,40 @@ export default function Karriere() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Review 1 */}
-          <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
-            <div className="flex text-[#0f9d58] mb-4">
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
+          <FadeIn direction="up" delay={0.1}>
+            <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out h-full">
+              <div className="flex text-[#0f9d58] mb-4">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <h4 className="font-bold text-lg mb-4 text-[#1e293b]">Sehr tolle Arbeitgeberin</h4>
+              <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                Sehr tolle Arbeitgeberin, die sich Zeit für einen nimmt. Die Arbeitsbedingungen sind wirklich toll, hier wird mit Herz &amp; Leidenschaft gearbeitet. Ich habe für meinen weiteren Weg sehr viele Einblicke erhalten und viel lernen können, dass Praktikanten so geschätzt und mit eingebunden werden, wie dort, ist wirklich sehr selten. Die Arbeitsatmosphäre war wirklich sehr angenehm. Alle sind super herzlich und offen. Man fühlt sich von Tag 1 an wohl. Hier werden Praktikanten in super viele Bereiche mit einbezogen. Dies gibt den Praktikanten eine wertvolle Gelegenheit ihre Fähigkeiten und Kenntnisse zu erweitern und Erfahrungen in verschiedenen Arbeitsbereichen zu sammeln.
+              </p>
+              <div className="mt-auto text-xl font-bold tracking-tighter text-[#1e293b]">kununu<sup className="text-xs">®</sup></div>
             </div>
-            <h4 className="font-bold text-lg mb-4 text-[#1e293b]">Sehr tolle Arbeitgeberin</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Sehr tolle Arbeitgeberin, die sich Zeit für einen nimmt. Die Arbeitsbedingungen sind wirklich toll, hier wird mit Herz &amp; Leidenschaft gearbeitet. Ich habe für meinen weiteren Weg sehr viele Einblicke erhalten und viel lernen können, dass Praktikanten so geschätzt und mit eingebunden werden, wie dort, ist wirklich sehr selten. Die Arbeitsatmosphäre war wirklich sehr angenehm. Alle sind super herzlich und offen. Man fühlt sich von Tag 1 an wohl. Hier werden Praktikanten in super viele Bereiche mit einbezogen. Dies gibt den Praktikanten eine wertvolle Gelegenheit ihre Fähigkeiten und Kenntnisse zu erweitern und Erfahrungen in verschiedenen Arbeitsbereichen zu sammeln.
-            </p>
-            <div className="mt-6 text-xl font-bold tracking-tighter text-[#1e293b]">kununu<sup className="text-xs">®</sup></div>
-          </div>
+          </FadeIn>
 
           {/* Review 2 */}
-          <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm">
-            <div className="flex text-[#0f9d58] mb-4">
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
-              <Star size={16} fill="currentColor" />
+          <FadeIn direction="up" delay={0.2}>
+            <div className="bg-white border border-slate-200 p-8 rounded-xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out h-full flex flex-col">
+              <div className="flex text-[#0f9d58] mb-4">
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+                <Star size={16} fill="currentColor" />
+              </div>
+              <h4 className="font-bold text-lg mb-4 text-[#1e293b]">Tolles Konzept...</h4>
+              <p className="text-sm text-slate-600 leading-relaxed mb-6 flex-grow">
+                Besonders gefällt mir das Konzept der Praxis. Der Chefin ist besonders wichtig Psychotherapie für möglichst viele Patientinnen anzubieten. Dafür hat sie ihren Privatpraxis gegründet und arbeitet viel mit dem Kostenerstattungsverfahren, sodass die Patientinnen die Therapie nicht selbst bezahlen müssen. Das finde ich sehr beeindruckend und sie ist für mich ein Vorbild. Das Team aus Therapeutinnen und Therapeuten ist äußerst kompetent und einfühlsam. Schon von Anfang an fühlte ich mich willkommen und konnte mich darauf verlassen, dass meine Fragen und Anliegen stets ernst genommen und wertschätzend behandelt wurden. Ich hatte jederzeit die Möglichkeit alle Fragen, die aufkamen zu stellen.
+              </p>
+              <div className="mt-auto text-xl font-bold tracking-tighter text-[#1e293b]">kununu<sup className="text-xs">®</sup></div>
             </div>
-            <h4 className="font-bold text-lg mb-4 text-[#1e293b]">Tolles Konzept...</h4>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              Besonders gefällt mir das Konzept der Praxis. Der Chefin ist besonders wichtig Psychotherapie für möglichst viele Patientinnen anzubieten. Dafür hat sie ihren Privatpraxis gegründet und arbeitet viel mit dem Kostenerstattungsverfahren, sodass die Patientinnen die Therapie nicht selbst bezahlen müssen. Das finde ich sehr beeindruckend und sie ist für mich ein Vorbild. Das Team aus Therapeutinnen und Therapeuten ist äußerst kompetent und einfühlsam. Schon von Anfang an fühlte ich mich willkommen und konnte mich darauf verlassen, dass meine Fragen und Anliegen stets ernst genommen und wertschätzend behandelt wurden. Ich hatte jederzeit die Möglichkeit alle Fragen, die aufkamen zu stellen.
-            </p>
-            <div className="mt-6 text-xl font-bold tracking-tighter text-[#1e293b]">kununu<sup className="text-xs">®</sup></div>
-          </div>
+          </FadeIn>
 
         </div>
       </section>
